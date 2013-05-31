@@ -26,6 +26,6 @@ yum_repository "rpmforge" do
   description "RHEL $releasever - RPMforge.net - dag"
   key node['repo']['rpmforge']['key']
   url node['repo']['rpmforge']['url']
-  mirrorlist true
+  mirrorlist node['repo']['rpmforge']['url']
   action :add
 end
