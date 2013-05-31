@@ -26,6 +26,6 @@ yum_repository "atomic" do
   description "CentOS / Red Hat Enterprise Linux $releasever - atomicrocketturtle.com"
   key node['repo']['atomic']['key']
   url node['repo']['atomic']['url']
-  mirrorlist true
+  mirrorlist node['repo']['atomic']['url']
   action :add
 end

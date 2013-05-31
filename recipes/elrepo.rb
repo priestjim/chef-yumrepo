@@ -26,7 +26,7 @@ yum_repository "elrepo-base" do
   description "ELRepo.org Community Enterprise Linux Repository - el#{node.platform_version.to_i}"
   key node['repo']['elrepo']['key']
   url node['repo']['elrepo']['base_url']
-  mirrorlist true
+  mirrorlist node['repo']['elrepo']['base_url']
   action :add
 end
 
@@ -34,7 +34,7 @@ yum_repository "elrepo-kernel" do
   description "ELRepo.org Community Enterprise Linux Kernel Repository - el#{node.platform_version.to_i}"
   key node['repo']['elrepo']['key']
   url node['repo']['elrepo']['kernel_url']
-  mirrorlist true
+  mirrorlist node['repo']['elrepo']['kernel_url']
   enabled 0
   action :add
 end
@@ -43,7 +43,7 @@ yum_repository "elrepo-extras" do
   description "ELRepo.org Community Enterprise Linux Repository - el#{node.platform_version.to_i}"
   key node['repo']['elrepo']['key']
   url node['repo']['elrepo']['extras_url']
-  mirrorlist true
+  mirrorlistnode['repo']['elrepo']['extras_url']
   enabled 0
   action :add
 end

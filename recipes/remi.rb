@@ -26,6 +26,6 @@ yum_repository "remi" do
   description "Les RPM de remi pour Enterprise Linux $releasever - $basearch"
   key node['repo']['remi']['key']
   url node['repo']['remi']['url']
-  mirrorlist true
+  mirrorlist node['repo']['remi']['url']
   action :add
 end
